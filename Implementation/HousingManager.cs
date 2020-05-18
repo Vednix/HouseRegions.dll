@@ -37,11 +37,11 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
       if (player == null) throw new ArgumentNullException();
       if (!player.IsLoggedIn) throw new PlayerNotLoggedInException();
 
-      this.CreateHouseRegion(player.Account, player.Group, area, checkOverlaps, checkPermissions, checkDefinePermission);
+      this.CreateHouseRegion(player.User, player.Group, area, checkOverlaps, checkPermissions, checkDefinePermission);
     }
 
 
-    public void CreateHouseRegion(UserAccount user, Group group, Rectangle area, bool checkOverlaps = true, bool checkPermissions = false, bool checkDefinePermission = false) {
+    public void CreateHouseRegion(User user, Group group, Rectangle area, bool checkOverlaps = true, bool checkPermissions = false, bool checkDefinePermission = false) {
       if (user == null) throw new ArgumentNullException();
       if (group == null) throw new ArgumentNullException();
       if (!(area.Width > 0 && area.Height > 0)) throw new ArgumentException();

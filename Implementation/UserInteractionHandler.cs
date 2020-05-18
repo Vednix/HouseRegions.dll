@@ -25,8 +25,8 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
       public CommandExecDummyPlayer(
         TSPlayer originalPlayer, Action<string,Color> sendMessageHandler
       ): base(originalPlayer.Name) {
-        this.Account.ID = originalPlayer.Account.ID;
-        this.Account.Name = originalPlayer.Account.Name;
+        this.User.ID = originalPlayer.User.ID;
+        this.User.Name = originalPlayer.User.Name;
         this.IsLoggedIn = originalPlayer.IsLoggedIn;
         this.Group = originalPlayer.Group;
 
@@ -91,7 +91,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
         int houseIndex;
         if (
           this.HousingManager.TryGetHouseRegionData(TShock.Regions.Regions[i].Name, out houseOwner, out houseIndex) &&
-          houseOwner == args.Player.Account.Name
+          houseOwner == args.Player.User.Name
         )
           playerHouseCount++;
       }
@@ -379,7 +379,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
 
       if (region.AllowedIDs.Count > 0) {
         IEnumerable<string> sharedUsersSelector = region.AllowedIDs.Select(userId => {
-          UserAccount user = TShock.UserAccounts.GetUserAccountByID(userId);
+            User user = TShock.Users.GetUserByID(userId);
           if (user != null)
             return user.Name;
           else
@@ -873,7 +873,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
         return;
       }
 
-      UserAccount tsUser;
+            User tsUser;
       if (!TShockEx.MatchUserByPlayerName(newOwnerRaw, out tsUser, args.Player))
         return;
 
@@ -948,7 +948,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
         return;
       }
 
-      UserAccount tsUser;
+            User tsUser;
       if (!TShockEx.MatchUserByPlayerName(shareTargetRaw, out tsUser, args.Player))
         return;
 
@@ -1002,7 +1002,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
         return;
       }
 
-      UserAccount tsUser;
+            User tsUser;
       if (!TShockEx.MatchUserByPlayerName(shareTargetRaw, out tsUser, args.Player))
         return;
 
@@ -1169,7 +1169,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
       if (!this.TryGetHouseRegionAtPlayer(player, out owner, out region))
         return false;
 
-      if (player.Account.Name!= owner && !player.Group.HasPermission(HouseRegionsPlugin.HousingMaster_Permission)) {
+      if (player.User.Name!= owner && !player.Group.HasPermission(HouseRegionsPlugin.HousingMaster_Permission)) {
         player.SendErrorMessage("You're not the owner of this house.");
         return false;
       }
