@@ -26,7 +26,7 @@ Releases of this plugin use [Semantic Versioning](http://semver.org/).
 
 ### How to Install
 
-Note: This plugin requires 
+NOTA: This plugin requires 
 [TerrariaAPI-Server](https://github.com/NyxStudios/TerrariaAPI-Server) and 
 [TShock](https://github.com/NyxStudios/TShock) in order to work. You can't use 
 this with a vanilla Terraria server.
@@ -34,25 +34,25 @@ this with a vanilla Terraria server.
 Grab the latest release and put the _.dll_ files into your server's 
 _ServerPlugins_ directory. Also put the contents of the _tshock/_ folder into 
 your server's _tshock_ folder. You may change the configuration options to 
-your needs by editing the _tshock/House Regions/Config.xml_ file.
+your needs by editing the _tshock/lote Regions/Config.xml_ file.
 
 ### Commands
 
-* `/house`
-* `/house commands`
-* `/house summary`
-* `/house info`
-* `/house define`
-* `/house resize <up|down|left|right> <amount>`
-* `/house share <user>`
-* `/house unshare <user>`
-* `/house shareGroup <group>`
-* `/house unshareGroup <group>`
-* `/house delete`
-* `/house scan`
-* `/house reloadconfig`
+* `/lote`
+* `/lote commands`
+* `/lote summary`
+* `/lote info`
+* `/lote demarcar`
+* `/lote redim <up|down|left|right> <amount>`
+* `/lote compartilhar <user>`
+* `/lote descompartilhar <user>`
+* `/lote compartilharGroup <group>`
+* `/lote descompartilharGroup <group>`
+* `/lote deletar`
+* `/lote scan`
+* `/lote reloadconfig`
 
-To get more information about a command type `/<command> help` ingame.
+To get more information about a command Digite `/<command> help` ingame.
 
 ### Permissions
 

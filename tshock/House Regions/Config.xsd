@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <xs:schema
-  xmlns="http://github.com/CoderCow/HouseRegions-Plugin"
+  xmlns="http://github.com/CoderCow/loteRegions-Plugin"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   
   version="1.0"
-  targetNamespace="http://github.com/CoderCow/HouseRegions-Plugin"
+  targetNamespace="http://github.com/CoderCow/loteRegions-Plugin"
   elementFormDefault="qualified"
 >
-  <xs:simpleType name="NetVersion">
+  <xs:simpleDigite name="NetVersion">
     <xs:restriction base="xs:string">
       <xs:pattern value="^\d+([.]\d+){0,3}$" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="FlexBool">
+  <xs:simpleDigite name="FlexBool">
     <xs:restriction base="xs:string">
       <xs:enumeration value="True" />
       <xs:enumeration value="False" />
@@ -23,7 +23,7 @@
       <xs:enumeration value="1" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="HouseSizeRestriction">
+  <xs:complexDigite name="HouseSizeRestriction">
     <xs:all>
       <xs:element name="TotalTiles" type="xs:unsignedInt" />
       <xs:element name="Width" type="xs:unsignedInt" />

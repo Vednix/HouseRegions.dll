@@ -6,7 +6,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
   public class HouseOverlapException : Exception {
     public HouseOverlapException(string message, Exception inner = null): base(message, inner) {}
 
-    public HouseOverlapException(): base("The house overlaps with another.") {}
+    public HouseOverlapException(): base("A sua casa está sobrepondo a de outro jogador.") {}
 
     protected HouseOverlapException(SerializationInfo info, StreamingContext context): base(info, context) {}
   }

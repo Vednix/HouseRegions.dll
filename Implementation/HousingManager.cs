@@ -73,13 +73,13 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
           break;
       }
       if (houseIndex == maxHouses)
-        throw new LimitEnforcementException("Max amount of houses reached.");
+        throw new LimitEnforcementException("[Loteamento] Quantidade máxima de loteamentos atingida.");
 
       if (!TShock.Regions.AddRegion(
         area.X, area.Y, area.Width, area.Height, houseName, user.Name, Main.worldID.ToString(), 
         this.Config.DefaultZIndex
       ))
-        throw new InvalidOperationException("House region might already exist.");
+        throw new InvalidOperationException("[Loteamento] Essa região aparenta já existir.");
     }
 
     public string ToHouseRegionName(string owner, int houseIndex) {
@@ -138,7 +138,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
       string currentOwner;
       int index;
       if (!this.TryGetHouseRegionData(region.Name, out currentOwner, out index))
-        throw new ArgumentException("The given region is not a house region.");
+        throw new ArgumentException("[Loteamento] A Região selecionada não é um loteamento.");
 
       if (currentOwner == newOwnerName)
         return;

@@ -13,7 +13,7 @@ using TShockAPI;
 namespace Terraria.Plugins.CoderCow.HouseRegions {
   [ApiVersion(2, 1)]
   public class HouseRegionsPlugin: TerrariaPlugin {
-    private const string TracePrefix = @"[Housing] ";
+    private const string TracePrefix = @"[Loteamento] ";
     public const string Define_Permission          = "houseregions.define";
     public const string Delete_Permission          = "houseregions.delete";
     public const string Share_Permission           = "houseregions.share";
@@ -83,7 +83,7 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
           this.Config = Configuration.Read(HouseRegionsPlugin.ConfigFilePath);
         } catch (Exception ex) {
           this.Trace.WriteLineError(
-            "Reading the configuration file failed. This plugin will be disabled. Exception details:\n{0}", ex
+            "[Loteamento] Erro ao ler o arquivo de configuração. Plugin sendo desabilitado. Detalhes do erro:\n{0}", ex
           );
 
           this.Dispose();

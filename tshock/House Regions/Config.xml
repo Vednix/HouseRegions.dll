@@ -6,7 +6,7 @@
   house the owner defines.
 -->
 <HouseRegionsConfiguration
-  xmlns="http://github.com/CoderCow/HouseRegions-Plugin"
+  xmlns="http://github.com/CoderCow/loteRegions-Plugin"
   
   Version="1.0"
 >
@@ -30,7 +30,7 @@
   <!--
     Whether house regions can overlap with TShock regions or not.
       
-    NOTE: House regions can never overlap with other house regions as long as the owner differs.
+    NOTA: House regions can never overlap with other house regions as long as the owner differs.
           They can always overlap with TShock regions if the TShock region's name is prefixed with a star (*), independent  
           of this setting.
           Housing regions can never overlap, except they're owned by the same user.
@@ -41,4 +41,4 @@
     The default z-index for new house regions.
   -->
   <DefaultZIndex>0</DefaultZIndex>
-</HouseRegionsConfiguration>
+</loteRegionsConfiguration>

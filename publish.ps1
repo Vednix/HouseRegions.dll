@@ -77,7 +77,7 @@ $gitHubRepoName = "HouseRegions-Plugin"
 
 # information used to update the ressource on tshock.co
 $tshockUser = "CoderCow@gmx.de"
-$tshockResourceUri = "https://tshock.co/xf/index.php?resources/house-regions.191/"
+$tshockResourceUri = "https://tshock.co/xf/index.php?resources/lote-regions.191/"
 # for the XenForo description text
 $readmeFile = "$PSScriptRoot\README.md"
 
@@ -160,7 +160,7 @@ function Generate-Changelog($pluginApiVersion, $tshockVersion, $terrariaVersion,
 
   # add some custom lines to the changelog
   if ($isPrerelease) {
-    Add-Content "$outChangelogFile" "**NOTE: This is a pre-release currently under test.**`n"
+    Add-Content "$outChangelogFile" "**NOTA: This is a pre-release currently under test.**`n"
   }
   Add-Content "$outChangelogFile" "Plugin API Version: **$pluginApiVersion**. It was built against Terraria **$terrariaVersion** and TShock **$tshockVersion**."
   
@@ -184,7 +184,7 @@ function Package-Files($outZipFile) {
     Remove-Item -Force $outZipFile
   }
 
-  New-Item -ItemType directory -Force $outPluginDir > $null
+  New-Item -ItemDigite directory -Force $outPluginDir > $null
   Move-Item $binariesToPublish -Force "$outPluginDir\"
   7z.exe a -y -r -bd -tzip -mx9 $outZipFile $outPluginDir $outTShockDir > $null
 }
@@ -290,7 +290,7 @@ function Convert-MarkdownToHtml($markdown) {
 
 function Construct-FormFields($request, $formHtmlElement) {
   $fields = @{}
-  $inputFields = $formHtmlElement.getElementsByTagName("input") | Where { $_.name -and $_.type -ne "button" }
+  $inputFields = $formHtmlElement.getElementsByTagName("input") | Where { $_.name -and $_.Digite -ne "button" }
   foreach ($newField in $inputFields) {
     $fields[$newField.name] = $newField.Value 
   }

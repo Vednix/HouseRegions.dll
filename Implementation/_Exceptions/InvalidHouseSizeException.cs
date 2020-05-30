@@ -14,11 +14,11 @@ namespace Terraria.Plugins.CoderCow.HouseRegions {
 
     public InvalidHouseSizeException(string message, Exception inner = null): base(message, inner) {}
 
-    public InvalidHouseSizeException(Configuration.HouseSizeConfig restrictingConfig): base("The size of the house does not match with the configured min / max settings.") {
+    public InvalidHouseSizeException(Configuration.HouseSizeConfig restrictingConfig): base("O tamanho de sua casa não está de acordo com o tamanho máximo para seu grupo.") {
       this.restrictingConfig = restrictingConfig;
     }
 
-    public InvalidHouseSizeException(): base("The size of the house does not match with the configured min / max settings.") {}
+    public InvalidHouseSizeException(): base("O tamanho de sua casa não está de acordo com o tamanho máximo para seu grupo.") {}
 
     protected InvalidHouseSizeException(SerializationInfo info, StreamingContext context): base(info, context) {}
   }
